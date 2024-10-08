@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box; /* Добавлено для удобства в верстке */
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Поддержка соотношения сторон изображений */
+}
+
+body {
+    background-color: black;
+}
+
+.ul_text {
+    display: flex;
+    justify-content: center; 
+    list-style-type: none;
+    padding: 0;
+    margin-top: 60px;
+    font-size: 25px;
+    font-family: "Times New Roman", serif;
+    gap: 50px; 
+}
+
+.ul_text li {
+    position: relative; 
+    cursor: pointer;
+    padding: 10px; 
+}
+
+.ul_text li::after {
+    content: ''; 
+    position: absolute;
+    left: 50%; 
+    bottom: 0; 
+    width: 0; 
+    height: 2px; 
+    background-color: #ff4500; 
+    transition: width 0.4s ease, left 0.4s ease; 
+}
+
+.ul_text li:hover::after {
+    width: 100%; 
+    left: 0; 
+}
+
+#img_shapka {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#logo {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    left: 100px;
+    top: -50px;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); 
+    transition: box-shadow 0.3s ease; 
+}
+
+#logo:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 1); 
+}
+
+#second {
+    position: relative;
+    z-index: -1;
+    top: -110px;
+    width: 70%;
+    right: -227px;
+    animation: wave 2s ease-in-out infinite; 
+}
+
+#two_fon {
+    position: relative;
+    top: -340px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    z-index: -2;
+    animation: wave 2s ease-in-out infinite; 
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(10px); 
+    }
+}
+
+#img_bab {
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.text {
+    font-family: 'Arial Narrow Bold', sans-serif;
+    text-align: right;
+    position: relative;
+    top: -300px;
+    left: -125px;
+}
+
+#text1 {
+    font-size: 40px;
+}
+
+#text2 {
+    font-size: 25px;
+}
+
+#text3 {
+    font-size: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    margin-top: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.shop-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    display: inline-block; 
+    margin-top: 20px; 
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .ul_text {
+        font-size: 22px; /* Slightly smaller font for medium screens */
+    }
+
+    #logo {
+        height: 60px; 
+        width: 60px; 
+        left: 80px; 
+        top: -40px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .ul_text {
+        flex-direction: column; 
+        font-size: 18px; 
+        gap: 20px; 
+        margin-top: 30px; 
+    }
+
+    #logo {
+        height: 50px; 
+        width: 50px; 
+        left: 50px; 
+        top: -30px; 
+    }
+
+    #second {
+        width: 90%; 
+        right: 0; 
+        top: -80px; 
+    }
+
+    #two_fon {
+        width: 90%; 
+        top: -240px; 
+    }
+
+    #img_bab {
+        height: 250px; 
+        width: 250px; 
+        top: 150px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+
+    .text {
+        text-align: center; 
+        top: -150px; 
+        left: 0; 
+    }
+
+    #text1 {
+        font-size: 30px; 
+    }
+
+    #text2 {
+        font-size: 20px; 
+    }
+
+    #text3 {
+        font-size: 16px; 
+    }
+
+    footer {
+        font-size: 14px; 
+    }
+}
+
+/* Specific Media Queries for iPhone */
+@media only screen and (max-width: 375px) {
+    .ul_text {
+        margin-top: 20px; 
+    }
+
+    #text1 {
+        font-size: 24px; 
+    }
+
+    #text2 {
+        font-size: 18px; 
+    }
+
+    #text3 {
+        font-size: 14px; 
+    }
+
+    .text {
+        top: -100px; 
+    }
+
+    footer {
+        font-size: 12px; 
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #logo {
+        height: 40px; 
+        width: 40px; 
+        left: 30px; 
+        top: -20px; 
+    }
+
+    #img_bab {
+        height: 200px; 
+        width: 200px; 
+        top: 120px; 
+    }
+
+    #text1 {
+        font-size: 20px; 
+    }
+
+    #text2 {
+        font-size: 16px; 
+    }
+
+    #text3 {
+        font-size: 12px; 
+    }
+}
